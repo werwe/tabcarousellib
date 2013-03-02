@@ -32,7 +32,6 @@ import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.android.tabcarousel.R;
 import com.nineoldandroids.animation.Animator;
 import com.nineoldandroids.animation.Animator.AnimatorListener;
 import com.nineoldandroids.animation.ObjectAnimator;
@@ -97,7 +96,7 @@ public class CarouselContainer extends HorizontalScrollView implements OnTouchLi
     /**
      * Indicates that both tabs are to be used if true, false if only one
      */
-    private boolean mDualTabs;
+    private boolean mDualTabs = true;
 
     /**
      * Interface invoked when the user interacts with the carousel
@@ -497,7 +496,7 @@ public class CarouselContainer extends HorizontalScrollView implements OnTouchLi
             case TAB_INDEX_FIRST:
                 return mFirstTab.getImage();
             case TAB_INDEX_SECOND:
-                return mFirstTab.getImage();
+                return mSecondTab.getImage();
             default:
                 throw new IllegalStateException("Invalid tab position " + index);
         }
@@ -514,7 +513,7 @@ public class CarouselContainer extends HorizontalScrollView implements OnTouchLi
             case TAB_INDEX_FIRST:
                 return mFirstTab.getLabel();
             case TAB_INDEX_SECOND:
-                return mFirstTab.getLabel();
+                return mSecondTab.getLabel();
             default:
                 throw new IllegalStateException("Invalid tab position " + index);
         }
